@@ -1,5 +1,6 @@
 import { config } from 'dotenv-safe';
-import express, { Request, Response } from 'express';
+import express, { json, urlencoded } from 'express';
+import RouterManager from './routes';
 
 class Server {
   private app: express.Application;
@@ -15,14 +16,12 @@ class Server {
   }
 
   private initializeMiddlewares(): void {
-    this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(json());
+    this.app.use(urlencoded({ extended: true }));
   }
 
   private initializeRoutes(): void {
-    this.app.get('/', (req: Request, res: Response) => {
-      res.send('Hello, World!');
-    });
+    RouterManager.initializeRoutes(this.app);
   }
 
   public listen(): void {
