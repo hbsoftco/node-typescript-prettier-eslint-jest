@@ -1,3 +1,6 @@
-console.log('hello');
+import { config } from 'dotenv-safe';
+config();
 
-console.log('all');
+console.log('hossein');
+
+console.log('hbsoft');
