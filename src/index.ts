@@ -1,6 +1,6 @@
 import { config } from 'dotenv-safe';
 import express, { json, urlencoded } from 'express';
-import RouterManager from './routes';
+import RouterManager from '@src/routes';
 
 class Server {
   private app: express.Application;

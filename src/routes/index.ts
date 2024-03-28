@@ -1,6 +1,6 @@
 import { Application } from 'express';
-import userRouter from './user.routes';
-import bookRoutes from './book.routes';
+import userRouter from '@src/routes/user.routes';
+import bookRoutes from '@src/routes/book.routes';
 
 class RouterManager {
   static initializeRoutes(app: Application): void {
